@@ -1,0 +1,76 @@
+{
+  "name": "Vote",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Title of the vote/proposal"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description of what's being voted on"
+    },
+    "vote_type": {
+      "type": "string",
+      "enum": [
+        "yes_no",
+        "multiple_choice",
+        "ranking"
+      ],
+      "default": "yes_no",
+      "description": "Type of voting"
+    },
+    "options": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Voting options (for multiple choice votes)"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date",
+      "description": "When voting starts"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date",
+      "description": "When voting ends"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "active",
+        "closed",
+        "cancelled"
+      ],
+      "default": "draft",
+      "description": "Current status of the vote"
+    },
+    "votes_cast": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "member_id": {
+            "type": "string"
+          },
+          "choice": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "Array of votes cast"
+    }
+  },
+  "required": [
+    "title",
+    "description",
+    "start_date",
+    "end_date"
+  ]
+}

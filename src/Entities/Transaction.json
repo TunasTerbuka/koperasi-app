@@ -1,0 +1,61 @@
+{
+  "name": "Transaction",
+  "type": "object",
+  "properties": {
+    "transaction_type": {
+      "type": "string",
+      "enum": [
+        "income",
+        "expense",
+        "dividend",
+        "loan"
+      ],
+      "description": "Type of transaction"
+    },
+    "amount": {
+      "type": "number",
+      "description": "Transaction amount"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the transaction"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Transaction date"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "agriculture",
+        "infrastructure",
+        "social",
+        "equipment",
+        "emergency",
+        "other"
+      ],
+      "description": "Transaction category"
+    },
+    "member_id": {
+      "type": "string",
+      "description": "Member ID if transaction is related to specific member"
+    },
+    "hash": {
+      "type": "string",
+      "description": "Blockchain hash for transparency"
+    },
+    "verified": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether transaction has been verified"
+    }
+  },
+  "required": [
+    "transaction_type",
+    "amount",
+    "description",
+    "date",
+    "category"
+  ]
+}

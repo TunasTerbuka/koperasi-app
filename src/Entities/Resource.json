@@ -1,0 +1,49 @@
+{
+  "name": "Resource",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the resource"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "equipment",
+        "facility",
+        "vehicle",
+        "land",
+        "other"
+      ],
+      "description": "Category of resource"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description of the resource"
+    },
+    "availability": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether resource is currently available"
+    },
+    "cost_per_use": {
+      "type": "number",
+      "default": 0,
+      "description": "Cost for using the resource"
+    },
+    "location": {
+      "type": "string",
+      "description": "Location of the resource"
+    },
+    "maintenance_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Last maintenance date"
+    }
+  },
+  "required": [
+    "name",
+    "category",
+    "description"
+  ]
+}

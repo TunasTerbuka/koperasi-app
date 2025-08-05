@@ -1,0 +1,53 @@
+{
+  "name": "Member",
+  "type": "object",
+  "properties": {
+    "full_name": {
+      "type": "string",
+      "description": "Full name of the cooperative member"
+    },
+    "village_address": {
+      "type": "string",
+      "description": "Address within the village"
+    },
+    "phone_number": {
+      "type": "string",
+      "description": "Contact phone number"
+    },
+    "member_id": {
+      "type": "string",
+      "description": "Unique member identification number"
+    },
+    "join_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date when member joined the cooperative"
+    },
+    "member_type": {
+      "type": "string",
+      "enum": [
+        "founding",
+        "regular",
+        "honorary"
+      ],
+      "default": "regular",
+      "description": "Type of membership"
+    },
+    "total_contributions": {
+      "type": "number",
+      "default": 0,
+      "description": "Total monetary contributions"
+    },
+    "active_status": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether member is currently active"
+    }
+  },
+  "required": [
+    "full_name",
+    "village_address",
+    "phone_number",
+    "member_id"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "Contribution",
+  "type": "object",
+  "properties": {
+    "member_id": {
+      "type": "string",
+      "description": "ID of the contributing member"
+    },
+    "contribution_type": {
+      "type": "string",
+      "enum": [
+        "money",
+        "goods",
+        "labor",
+        "land"
+      ],
+      "description": "Type of contribution"
+    },
+    "amount": {
+      "type": "number",
+      "description": "Monetary value or quantity"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the contribution"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of contribution"
+    },
+    "verified": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether contribution has been verified"
+    },
+    "hash": {
+      "type": "string",
+      "description": "Blockchain hash for transparency"
+    }
+  },
+  "required": [
+    "member_id",
+    "contribution_type",
+    "amount",
+    "description",
+    "date"
+  ]
+}
